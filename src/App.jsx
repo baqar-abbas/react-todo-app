@@ -7,8 +7,12 @@ function App() {
 
   return (
     <React.Fragment>
+      <div className="wrapper">
+      <div className="todos">
     <Header />
     <TodosLogic />
+    </div>
+    </div>
     </React.Fragment>
   )
 }

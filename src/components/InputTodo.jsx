@@ -25,16 +25,17 @@ if (title.trim()) {
 
   return (
     <>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-container">
         <input
          type='text'
          value={title}
+         className="input-text"
          onChange={handleChange} 
          placeholder='Add todo...' 
          />
-        <button>Add</button>
+        <button className="input-submit">Submit</button>
     </form>
-    <span>{message}</span>
+    <span className="submit-warning">{message}</span>
     </>
   )
 }
