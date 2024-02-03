@@ -17,7 +17,8 @@ const TodoItem = ({itemProp, setTodos, delTodo}) => {
   }
   return (
     <>
-    <li>
+    <li className="item">
+      <div className="content">
       <input 
       type='checkbox'
       checked={itemProp.completed}
@@ -25,6 +26,7 @@ const TodoItem = ({itemProp, setTodos, delTodo}) => {
       />
       <button onClick={() => delTodo(itemProp.id)}>Delete</button>
       {itemProp.title}
+      </div>
     </li>
     </>
   )
