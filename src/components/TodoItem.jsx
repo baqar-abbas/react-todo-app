@@ -1,9 +1,11 @@
 // TodoItem component
 /* eslint-disable */
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const TodoItem = ({itemProp, setTodos, delTodo}) => {
   const [editing, setEditing] = useState(false);
+  const editInputRef = useRef();
+  // const [updateInput, setUpdateInput] = useState(itemProp.title);
    
   const completedStyle = {
     fontStyle: 'italic',
@@ -27,6 +29,7 @@ const TodoItem = ({itemProp, setTodos, delTodo}) => {
 
   const handleUpdateDone = (e) => {
     if (e.key === 'Enter') {
+      setUpdate(editInputRef.current.value, itemProp.id);
       setEditing(false);
     }
   }
@@ -44,8 +47,6 @@ const TodoItem = ({itemProp, setTodos, delTodo}) => {
     })
   );
   }
-
-  
 
   const handleChange = (id) => {
     setTodos((prevState) =>
@@ -79,8 +80,10 @@ const TodoItem = ({itemProp, setTodos, delTodo}) => {
       type="text"
       style={editMode}
       className="inputText"
-      value={itemProp.title}
-      onChange={(e)=> setUpdate(e.target.value, itemProp.id)}
+      defaultValue={itemProp.title}
+      ref={editInputRef}
+      // value={updateInput}
+      // onChange={(e)=> setUpdateInput(e.target.value)}
       onKeyDown={handleUpdateDone}
       />
     </li>
