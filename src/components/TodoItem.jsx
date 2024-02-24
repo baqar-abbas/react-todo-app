@@ -3,8 +3,10 @@
 import { useState, useRef } from "react";
 import { FaTrash } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
+import { useTodosContext } from '../context/TodosContext';
 
-const TodoItem = ({itemProp, setTodos, delTodo}) => {
+const TodoItem = ({itemProp}) => {
+  const {setTodos, delTodo} = useTodosContext();
   const [editing, setEditing] = useState(false);
   const editInputRef = useRef();
   // const [updateInput, setUpdateInput] = useState(itemProp.title);
