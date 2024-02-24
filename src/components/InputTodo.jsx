@@ -2,10 +2,11 @@
 /* eslint-disable */
 import { useState } from "react"
 import { FaPlusCircle } from "react-icons/fa";
-import { useTodosContext } from '../context/TodosContext';
+import { useTodosStore } from '../store'
 
 const InputTodo = () => {
-  const {addTodoItem} = useTodosContext();
+  const addTodoItem = useTodosStore((state) => state.addTodoItem);
+
   const [title,setTitle] = useState('');
   const [message, setMessage] = useState('');
   const handleChange = (e) => {

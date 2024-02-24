@@ -3,13 +3,15 @@
 import { useState, useRef } from "react";
 import { FaTrash } from "react-icons/fa";
 import { AiFillEdit } from "react-icons/ai";
-import { useTodosContext } from '../context/TodosContext';
+import { useTodosStore } from '../store'
 
 const TodoItem = ({itemProp}) => {
-  const {setTodos, delTodo} = useTodosContext();
   const [editing, setEditing] = useState(false);
   const editInputRef = useRef();
   // const [updateInput, setUpdateInput] = useState(itemProp.title);
+  const handleChange = useTodosStore((state) => state.handleChange);
+  const delTodo = useTodosStore((state) => state.delTodo);
+  const setUpdate = useTodosStore((state) => state.setUpdate);
    
   const completedStyle = {
     fontStyle: 'italic',
@@ -38,33 +40,33 @@ const TodoItem = ({itemProp}) => {
     }
   }
 
-  const setUpdate = (updatedTitle, id) => {
-    setTodos((prevState) =>
-    prevState.map((todo) => {
-      if (todo.id === id) {
-        return {
-          ...todo,
-          title: updatedTitle,
-        };
-      }
-      return todo;
-    })
-  );
-  }
+  // const setUpdate = (updatedTitle, id) => {
+  //   setTodos((prevState) =>
+  //   prevState.map((todo) => {
+  //     if (todo.id === id) {
+  //       return {
+  //         ...todo,
+  //         title: updatedTitle,
+  //       };
+  //     }
+  //     return todo;
+  //   })
+  // );
+  // }
 
-  const handleChange = (id) => {
-    setTodos((prevState) =>
-    prevState.map((todo) => {
-      if (todo.id === id) {
-        return {
-          ...todo,
-          completed: !todo.completed,
-        };
-      }
-      return todo;
-    })
-  );
-  }
+  // const handleChange = (id) => {
+  //   setTodos((prevState) =>
+  //   prevState.map((todo) => {
+  //     if (todo.id === id) {
+  //       return {
+  //         ...todo,
+  //         completed: !todo.completed,
+  //       };
+  //     }
+  //     return todo;
+  //   })
+  // );
+  // }
   return (
     <>
     <li className="item">
