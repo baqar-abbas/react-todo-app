@@ -39,34 +39,6 @@ const TodoItem = ({itemProp}) => {
       setEditing(false);
     }
   }
-
-  // const setUpdate = (updatedTitle, id) => {
-  //   setTodos((prevState) =>
-  //   prevState.map((todo) => {
-  //     if (todo.id === id) {
-  //       return {
-  //         ...todo,
-  //         title: updatedTitle,
-  //       };
-  //     }
-  //     return todo;
-  //   })
-  // );
-  // }
-
-  // const handleChange = (id) => {
-  //   setTodos((prevState) =>
-  //   prevState.map((todo) => {
-  //     if (todo.id === id) {
-  //       return {
-  //         ...todo,
-  //         completed: !todo.completed,
-  //       };
-  //     }
-  //     return todo;
-  //   })
-  // );
-  // }
   return (
     <>
     <li className="item">
