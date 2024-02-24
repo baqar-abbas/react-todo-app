@@ -6,7 +6,6 @@ import { AiFillEdit } from "react-icons/ai";
 import { useTodosStore } from '../store'
 
 const TodoItem = ({itemProp}) => {
-
   const [editing, setEditing] = useState(false);
   const editInputRef = useRef();
   // const [updateInput, setUpdateInput] = useState(itemProp.title);

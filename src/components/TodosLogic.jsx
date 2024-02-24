@@ -5,6 +5,7 @@ import TodosList from "./TodosList";
 // import { v4 as uuidv4 } from "uuid";
 
 const TodosLogic = () => {
+
     // const [todos, setTodos] = useState(getInitialTodos());
 
     // function getInitialTodos() {
@@ -42,6 +43,7 @@ const TodosLogic = () => {
         <InputTodo />
         <TodosList />
   </div>
+
   )
 }
 
