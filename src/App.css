@@ -114,3 +114,12 @@ body {
   border: 1px solid #dfdfdf;
   outline: none;
 }
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+/* Active route */
+.active {
+  color: #005bb3;
+}
