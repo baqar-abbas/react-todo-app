@@ -1,6 +1,6 @@
-// import React from 'react'
+/* eslint-disable */
 
-const Header = () => {
+const Header = (props) => {
   const headerStyle = {
     padding: '20px 0',
     lineHeight: '1.5em',
@@ -9,8 +9,7 @@ const Header = () => {
   };
   return (
     <header style={headerStyle} className="header">
-    <h1>todos</h1>
-    <p>Items will persist in the browser local storage</p>
+      {props.children}
   </header>
   )
 }
