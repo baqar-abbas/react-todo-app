@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "../styles/Login.module.css"
 import { useAuthContext } from "../context/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -18,7 +19,9 @@ const Login = () => {
   }
     return (
     <div>
-    <h1>login</h1>
+      <Header>
+      <h1>login</h1>
+      </Header>
     <div className={styles.formWrapper}>
     <form className={styles.form} onSubmit={handleSubmit}>
     <label htmlFor="user" className={styles.inputLabel}>User Name</label>
